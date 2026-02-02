@@ -1,0 +1,369 @@
+:root {
+    /* Color Palette */
+    --bg-color: #0A0808;
+    --accent-orange: #CE491F;
+    --accent-peach: #E08F69;
+    --accent-light-peach: #F0B089;
+    --accent-brown: #51291C;
+    --text-primary: #F0B089;
+    --text-secondary: #8F8F8F;
+    --text-muted: #626261;
+
+    /* Typography */
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    /* Spacing */
+    --section-padding: 8rem 5%;
+    --container-max-width: 1400px;
+
+    /* Transitions */
+    --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+}
+
+.container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+}
+
+.section {
+    padding: var(--section-padding);
+}
+
+.section-title {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: var(--accent-peach);
+    border-bottom: 2px solid var(--accent-orange);
+    display: inline-block;
+    padding-bottom: 1rem;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    letter-spacing: 0.5em;
+    color: var(--text-muted);
+    margin-bottom: 4rem;
+    text-transform: uppercase;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    opacity: 0;
+    /* Handled by GSAP */
+}
+
+.label {
+    font-family: var(--font-body);
+    color: var(--accent-orange);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    letter-spacing: 0.3em;
+}
+
+.kinetic-text {
+    font-size: clamp(3rem, 10vw, 8rem);
+    line-height: 0.9;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+}
+
+.hero-subtext {
+    font-size: 1.5rem;
+    max-width: 600px;
+    color: var(--text-secondary);
+    font-weight: 300;
+}
+
+.hero-image-container {
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    width: 45%;
+    height: 80%;
+    z-index: 1;
+    clip-path: polygon(10% 0, 100% 0, 100% 90%, 0 100%);
+    opacity: 0.4;
+    overflow: hidden;
+}
+
+.hero-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Why Section */
+.why-list {
+    list-style: none;
+    margin: 2rem 0;
+}
+
+.why-list li {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+    position: relative;
+    color: var(--text-secondary);
+}
+
+.why-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent-orange);
+    font-weight: bold;
+}
+
+.highlight-text {
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    font-weight: 800;
+    margin-top: 4rem;
+    font-style: italic;
+    line-height: 1.2;
+}
+
+/* Philosophy Section */
+.phi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.phi-item {
+    border-top: 1px solid var(--text-muted);
+    padding-top: 2rem;
+    transition: var(--transition-smooth);
+}
+
+.phi-item:hover {
+    border-top-color: var(--accent-orange);
+    transform: translateY(-5px);
+}
+
+.phi-num {
+    font-family: var(--font-heading);
+    color: var(--accent-orange);
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.phi-item h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.phi-desc {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-top: 1rem;
+}
+
+/* Journey Section */
+.journey-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.day-card {
+    background: #121010;
+    padding: 3rem 2rem;
+    border-left: 3px solid var(--accent-orange);
+    transition: var(--transition-smooth);
+}
+
+.day-card:hover {
+    background: var(--accent-brown);
+    transform: translateY(-10px);
+}
+
+.day {
+    color: var(--accent-peach);
+    font-weight: 800;
+    display: block;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.day-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.day-card p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Faculty Section */
+.faculty-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+}
+
+.faculty-card {
+    position: relative;
+}
+
+.faculty-image {
+    aspect-ratio: 4/5;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    clip-path: polygon(5% 0, 100% 0, 95% 100%, 0 95%);
+}
+
+.faculty-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-smooth);
+}
+
+.faculty-info h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.role {
+    color: var(--accent-peach);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* FAQ Section */
+.faq-container {
+    max-width: 900px;
+}
+
+.faq-item {
+    margin-bottom: 4rem;
+    border-left: 1px solid var(--text-muted);
+    padding-left: 2.5rem;
+}
+
+.faq-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    text-transform: none;
+}
+
+.faq-item p {
+    color: var(--text-secondary);
+}
+
+/* CTA Section */
+.cta-box {
+    background: linear-gradient(135deg, var(--accent-brown) 0%, #000 100%);
+    padding: 10rem 10%;
+    text-align: center;
+    clip-path: polygon(0 8%, 100% 0, 100% 92%, 0 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-invite {
+    display: inline-block;
+    margin-top: 3rem;
+    padding: 1.5rem 4rem;
+    background-color: var(--accent-orange);
+    color: #fff;
+    text-decoration: none;
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 0.3em;
+    transition: var(--transition-smooth);
+}
+
+.btn-invite:hover {
+    background-color: var(--accent-light-peach);
+    color: var(--bg-color);
+    transform: scale(1.05) translateY(-5px);
+}
+
+.selective {
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+/* Utility / Animation Classes */
+.char {
+    display: inline-block;
+}
+
+@media (max-width: 1024px) {
+    .phi-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-image-container {
+        opacity: 0.2;
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .faculty-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    .kinetic-text {
+        font-size: 4rem;
+    }
+}
