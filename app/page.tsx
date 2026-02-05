@@ -10,6 +10,8 @@ import EventDetails from '@/components/EventDetails'
 import Invitation from '@/components/Invitation'
 import FAQ from '@/components/FAQ'
 import Footer from '@/components/Footer'
+import OrbitalGallery from '@/components/OrbitalGallery'
+import MagneticNarrativeGrid from '@/components/MagneticNarrativeGrid'
 
 export default function Home() {
   return (
@@ -22,6 +24,8 @@ export default function Home() {
       <Journey />
       <WhoIsFor />
       <Faculty />
+      <OrbitalGallery />
+      {/* <MagneticNarrativeGrid /> */}
       <EventDetails />
       <Invitation />
       <FAQ />

@@ -24,7 +24,7 @@ export default function WhyExists() {
     >
       {/* Background accent */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary-600/30 to-transparent" />
-      
+
       <div className="container-custom">
         <div className="max-w-4xl mx-auto">
           {/* Section header */}
@@ -40,7 +40,7 @@ export default function WhyExists() {
 
           {/* Opening statement */}
           <MotionDiv variants={fadeInUp} className="mb-16">
-            <div className="card-glass p-8 md:p-12">
+            <div className="card-glass p-8 md:p-12 bg-[#932063]/25">
               <p className="text-xl md:text-2xl text-dark-200 font-serif leading-relaxed text-center">
                 Most leadership development works well—
                 <span className="text-primary-400"> when conditions are controlled.</span>
@@ -50,6 +50,7 @@ export default function WhyExists() {
               </p>
             </div>
           </MotionDiv>
+
 
           {/* Pressure points */}
           <MotionDiv variants={staggerContainer} className="grid gap-4 mb-16">
