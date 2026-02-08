@@ -1,27 +1,34 @@
 'use client'
 
-import Image from 'next/image'
-import HeroBanner from '../components/assets/images/Banner1.jpg'
 import { motion } from 'framer-motion'
 import { MapPin, Calendar, Lock, ArrowDown } from 'lucide-react'
+import { ImagesSlider } from '@/components/ui/images-slider'
+import { TypewriterEffect } from '@/components/ui/typewriter-effect'
+
+const HERO_SLIDER_IMAGES = [
+  'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop',
+]
 
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
 
-      {/* ================= BACKGROUND IMAGE ================= */}
+      {/* ================= BACKGROUND SLIDESHOW ================= */}
       <div className="absolute inset-0 -z-30">
-        <Image
-          src={HeroBanner}
-          alt="Executive leadership event background"
-          fill
-          priority
-          className="object-cover"
-        />
+        <ImagesSlider
+          images={HERO_SLIDER_IMAGES}
+          overlay={true}
+          overlayClassName="bg-gradient-to-b from-dark-950/40 via-dark-950/70 to-dark-950"
+          className="h-full w-full"
+          autoplay={true}
+          direction="right"
+        >
+          <></>
+        </ImagesSlider>
       </div>
-
-      {/* ================= DARK + LUXURY GRADIENT OVERLAY ================= */}
-      <div className="absolute inset-0 -z-20 bg-gradient-to-b from-dark-950/40 via-dark-950/70 to-dark-950" />
 
       {/* ================= ANIMATED GRADIENT ORBS ================= */}
       <div className="absolute inset-0 overflow-hidden -z-10">
@@ -52,18 +59,6 @@ export default function Hero() {
       {/* ================= CONTENT ================= */}
       <div className="relative z-10 container-custom text-center px-4 py-32">
 
-        {/* Event badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="inline-flex items-center gap-2 mb-8"
-        >
-          <span className="px-4 py-2 bg-primary-600/10 border border-primary-600/30 rounded-full text-primary-400 text-sm font-medium tracking-wide">
-            Executive Leadership Experience
-          </span>
-        </motion.div>
-
         {/* Heading */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
@@ -77,15 +72,26 @@ export default function Hero() {
           </span>
         </motion.h1>
 
-        {/* Tagline */}
-        <motion.p
+        {/* Tagline – typewriter effect */}
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
           className="text-xl md:text-2xl lg:text-3xl text-dark-300 font-serif italic max-w-3xl mx-auto mb-6"
         >
-          Leadership is revealed when it matters most.
-        </motion.p>
+          <TypewriterEffect
+            words={[
+              { text: 'Leadership' },
+              { text: 'is' },
+              { text: 'revealed' },
+              { text: 'when' },
+              { text: 'it' },
+              { text: 'matters' },
+              { text: 'most.', className: 'text-primary-400' },
+            ]}
+            className="!font-normal italic font-serif text-xl md:text-2xl lg:text-3xl text-dark-300 max-w-3xl mx-auto text-center"
+          />
+        </motion.div>
 
         {/* Description */}
         <motion.p
@@ -99,24 +105,31 @@ export default function Hero() {
           composure, and conscious choice when it matters most.
         </motion.p>
 
-        {/* Event details */}
+        {/* Executive Leadership Experience + Event details */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.1 }}
-          className="flex flex-wrap justify-center gap-6 md:gap-10 mb-12"
+          className="mb-12"
         >
-          <div className="flex items-center gap-2 text-dark-300">
-            <MapPin className="w-5 h-5 text-primary-500" />
-            <span className="font-medium">Dubai</span>
+          <div className="inline-flex items-center gap-2 mb-6">
+            <span className="px-4 py-2 bg-primary-600/10 border border-primary-600/30 rounded-full text-primary-400 text-sm font-medium tracking-wide">
+              Executive Leadership Experience
+            </span>
           </div>
-          <div className="flex items-center gap-2 text-dark-300">
-            <Calendar className="w-5 h-5 text-primary-500" />
-            <span className="font-medium">April 20–24, 2026</span>
-          </div>
-          <div className="flex items-center gap-2 text-dark-300">
-            <Lock className="w-5 h-5 text-primary-500" />
-            <span className="font-medium">By Invitation Only</span>
+          <div className="flex flex-wrap justify-center gap-6 md:gap-10">
+            <div className="flex items-center gap-2 text-dark-300">
+              <MapPin className="w-5 h-5 text-primary-500" />
+              <span className="font-medium">Dubai</span>
+            </div>
+            <div className="flex items-center gap-2 text-dark-300">
+              <Calendar className="w-5 h-5 text-primary-500" />
+              <span className="font-medium">April 20–24, 2026</span>
+            </div>
+            <div className="flex items-center gap-2 text-dark-300">
+              <Lock className="w-5 h-5 text-primary-500" />
+              <span className="font-medium">By Invitation Only</span>
+            </div>
           </div>
         </motion.div>
 

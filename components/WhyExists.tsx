@@ -2,13 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { MotionSection, MotionDiv, fadeInUp, staggerContainer, staggerItem } from './ui/motion'
-
-const pressurePoints = [
-  'When stakes are high',
-  'When information is incomplete',
-  'When emotions influence judgment',
-  'When others look to you for certainty',
-]
+import PressurePointsList from './PressurePointsList'
 
 const outcomes = [
   'See what pressure truly reveals in them',
@@ -52,19 +46,10 @@ export default function WhyExists() {
           </MotionDiv>
 
 
-          {/* Pressure points */}
-          <MotionDiv variants={staggerContainer} className="grid gap-4 mb-16">
-            {pressurePoints.map((point, index) => (
-              <motion.div
-                key={index}
-                variants={staggerItem}
-                className="flex items-center gap-4 py-2.5 px-4 md:py-3 md:px-5 card-glass-hover"
-              >
-                <div className="flex-shrink-0 w-2 h-2 rounded-full bg-primary-500" />
-                <span className="text-lg md:text-xl text-dark-200">{point}</span>
-              </motion.div>
-            ))}
-          </MotionDiv>
+          {/* Pressure points – timeline style (numbered circles + connecting line) */}
+          <div className="mb-16">
+            <PressurePointsList />
+          </div>
 
           {/* Key statement */}
           <MotionDiv variants={fadeInUp} className="text-center mb-16">

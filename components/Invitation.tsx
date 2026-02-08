@@ -7,19 +7,15 @@ import { ArrowRight } from 'lucide-react'
 export default function Invitation() {
   return (
     <MotionSection
-      id="invitation"
+      id="invitation-section"
       variants={staggerContainer}
       className="section-padding relative overflow-hidden"
     >
-      {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-dark-900/50 to-dark-950" />
-      
-      {/* Glow effect */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-600/10 rounded-full blur-[100px]" />
 
       <div className="container-custom relative z-10">
         <div className="max-w-3xl mx-auto text-center">
-          {/* Section header */}
           <MotionDiv variants={fadeInUp}>
             <span className="text-primary-500 text-sm font-medium tracking-[0.2em] uppercase mb-4 block">
               Take the Next Step
@@ -29,7 +25,6 @@ export default function Invitation() {
             </h2>
           </MotionDiv>
 
-          {/* Quote */}
           <MotionDiv variants={fadeInUp} className="mb-12">
             <div className="card-glass p-8 md:p-12 border-primary-600/20">
               <p className="text-xl md:text-2xl text-dark-200 font-serif leading-relaxed mb-6">
@@ -48,13 +43,12 @@ export default function Invitation() {
             </div>
           </MotionDiv>
 
-          {/* CTA */}
           <MotionDiv variants={fadeInUp}>
             <p className="text-dark-400 mb-8">
               To explore participation, request an invitation below.
             </p>
             <motion.a
-              href="#"
+              href="#invitation"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="btn-primary inline-flex items-center gap-3 text-lg px-10 py-5"
@@ -67,7 +61,6 @@ export default function Invitation() {
             </p>
           </MotionDiv>
 
-          {/* Section end line */}
           <div className="divider-gradient w-full max-w-3xl mx-auto mt-16" />
         </div>
       </div>

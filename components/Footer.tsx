@@ -19,7 +19,11 @@ export default function Footer() {
         <div className="relative w-full max-w-[600px] aspect-[2/1] overflow-hidden">
           <Globe
             className="absolute left-1/2 -translate-x-1/2 top-0 w-full max-w-none aspect-square min-w-full min-h-full"
-            config={{ mapBrightness: 0.7 }}
+            config={{
+              mapBrightness: 0.7,
+              baseColor: [212 / 255, 160 / 255, 18 / 255],
+              glowColor: [250 / 255, 204 / 255, 21 / 255],
+            }}
           />
         </div>
       </div>

@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react'
 import { Alert } from '@/components/ui/alert'
-import { Button } from '@/components/ui/button'
 import { Radio } from 'lucide-react'
 
 // Event start: April 20, 2026, 9:00 AM Dubai (UTC+4)
@@ -68,7 +67,7 @@ export function AlertLiveEvent() {
         >
           <Radio className="text-primary-400" size={16} strokeWidth={2} />
         </div>
-        <div className="flex grow items-center justify-between gap-4 min-w-0">
+        <div className="flex grow items-center min-w-0">
           <div className="space-y-0.5 min-w-0">
             <p className="text-xs font-medium text-dark-100">
               {isLive ? (
@@ -79,12 +78,6 @@ export function AlertLiveEvent() {
             </p>
             <p className="text-xs text-dark-400">April 20, 2026 · Dubai</p>
           </div>
-          <Button
-            size="sm"
-            className="h-6 px-2 text-[10px] shrink-0 !bg-primary-600 hover:!bg-primary-500 !text-dark-950 border-0"
-          >
-            Notify me
-          </Button>
         </div>
       </div>
     </Alert>

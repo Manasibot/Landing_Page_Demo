@@ -8,14 +8,15 @@ import WhoIsFor from '@/components/WhoIsFor'
 import Faculty from '@/components/Faculty'
 import EventDetails from '@/components/EventDetails'
 import Invitation from '@/components/Invitation'
+import { InvitationModal } from '@/components/InvitationModal'
 import FAQ from '@/components/FAQ'
 import Footer from '@/components/Footer'
-import OrbitalGallery from '@/components/OrbitalGallery'
-import MagneticNarrativeGrid from '@/components/MagneticNarrativeGrid'
+import UniverseOfLeadership from '@/components/UniverseOfLeadership'
 
 export default function Home() {
   return (
     <main className="relative">
+      <InvitationModal />
       <Navigation />
       <Hero />
       <WhyExists />
@@ -24,8 +25,7 @@ export default function Home() {
       <Journey />
       <WhoIsFor />
       <Faculty />
-      <OrbitalGallery />
-      {/* <MagneticNarrativeGrid /> */}
+      <UniverseOfLeadership />
       <EventDetails />
       <Invitation />
       <FAQ />

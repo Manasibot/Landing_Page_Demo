@@ -18,6 +18,12 @@
     @apply bg-dark-950 text-dark-100 antialiased;
   }
 
+  input,
+  select,
+  textarea {
+    @apply font-sans;
+  }
+
   ::selection {
     @apply bg-primary-600/30 text-white;
   }
@@ -144,6 +150,15 @@
   .animation-delay-1000 {
     animation-delay: 1000ms;
   }
+}
+
+/* Hide scrollbar but keep scroll (e.g. Philosophy sticky section) */
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
 
 /* Custom scrollbar */

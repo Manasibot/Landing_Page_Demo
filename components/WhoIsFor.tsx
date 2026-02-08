@@ -44,7 +44,7 @@ export default function WhoIsFor() {
             <span className="text-primary-500 text-sm font-medium tracking-[0.2em] uppercase mb-4 block">
               Is This For You?
             </span>
-            <h2 className="heading-lg text-dark-100 mb-6">
+            <h2 className="text-sm sm:text-xl md:text-3xl lg:text-4xl xl:text-5xl font-serif font-bold tracking-tight text-dark-100 mb-6 whitespace-nowrap">
               Who This Experience Is For
             </h2>
             <div className="divider-gradient max-w-xs mb-8" />
