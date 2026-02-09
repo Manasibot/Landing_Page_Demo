@@ -1,8 +1,10 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { MotionSection, MotionDiv, fadeInUp, staggerContainer } from './ui/motion'
 import { ArrowRight } from 'lucide-react'
+import dubaiBg from './assets/dubai/dubai bg.jpg'
 
 export default function Invitation() {
   return (
@@ -11,7 +13,15 @@ export default function Invitation() {
       variants={staggerContainer}
       className="section-padding relative overflow-hidden"
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-dark-900/50 to-dark-950" />
+      <div className="absolute inset-0 -z-10">
+        <Image
+          src={dubaiBg}
+          alt=""
+          className="w-full h-full object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-dark-900/50 to-dark-950" />
+      </div>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-600/10 rounded-full blur-[100px]" />
 
       <div className="container-custom relative z-10">

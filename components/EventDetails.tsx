@@ -1,8 +1,10 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { MotionSection, MotionDiv, fadeInUp, staggerContainer } from './ui/motion'
 import { MapPin, Calendar, Users, Lock } from 'lucide-react'
+import DubaiBg from './assets/dubai/dubai 1.jpg'
 
 const details = [
   {
@@ -38,8 +40,17 @@ export default function EventDetails() {
       variants={staggerContainer}
       className="section-padding relative overflow-hidden"
     >
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-dark-950 via-dark-900/30 to-dark-950" />
+      {/* Background – Dubai image with overlay for readability */}
+      <div className="absolute inset-0 -z-10">
+        <Image
+          src={DubaiBg}
+          alt=""
+          className="w-full h-full object-cover"
+          sizes="100vw"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-dark-950/60 via-dark-950/50 to-dark-950/70" />
+      </div>
 
       <div className="container-custom relative z-10">
         {/* Section header */}

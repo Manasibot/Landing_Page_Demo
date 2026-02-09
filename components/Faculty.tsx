@@ -5,14 +5,14 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { MotionSection, MotionDiv, fadeInUp, staggerContainer } from './ui/motion'
 import { ProfileCard } from '@/components/ui/profile-card'
-import Faculty1 from './assets/images/faculty1.jpeg'
+import DrAayubProfile from './assets/images/Dr.Aayub profile.jpg'
 import Faculty2 from './assets/images/faculty2.jpeg'
 
 const faculty = [
   {
     name: 'Dr. Abdelbasit Ayoub',
     role: 'Lead Facilitator',
-    image: Faculty1,
+    image: DrAayubProfile,
     description:
       'A seasoned leadership scholar and practitioner with decades of experience working with leaders in complex, high-pressure environments across regions and cultures. His work sits at the intersection of leadership psychology, decision-making under pressure, and human behavior. Known for his calm authority and depth of insight, Dr. Ayoub creates learning environments that are both intellectually rigorous and psychologically safe. His facilitation style is reflective, precise, and deeply human—grounded in real-world leadership realities rather than abstract theory.',
   },

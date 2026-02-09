@@ -2,7 +2,7 @@ import Navigation from '@/components/Navigation'
 import Hero from '@/components/Hero'
 import WhyExists from '@/components/WhyExists'
 import Philosophy from '@/components/Philosophy'
-import WhatMakesDifferent from '@/components/WhatMakesDifferent'
+// import WhatMakesDifferent from '@/components/WhatMakesDifferent'
 import Journey from '@/components/Journey'
 import WhoIsFor from '@/components/WhoIsFor'
 import Faculty from '@/components/Faculty'
@@ -21,7 +21,7 @@ export default function Home() {
       <Hero />
       <WhyExists />
       <Philosophy />
-      <WhatMakesDifferent />
+      {/* <WhatMakesDifferent /> */}
       <Journey />
       <WhoIsFor />
       <Faculty />

@@ -107,6 +107,24 @@
     @apply h-px bg-gradient-to-r from-transparent via-primary-600/50 to-transparent;
   }
 
+  /* Visible horizontal scrollbar for bento gallery */
+  .bento-scroll-track {
+    scrollbar-width: thin;
+    scrollbar-color: #d4a012 #1e293b;
+  }
+  .bento-scroll-track::-webkit-scrollbar {
+    height: 10px;
+  }
+  .bento-scroll-track::-webkit-scrollbar-track {
+    @apply bg-dark-800 rounded-full;
+  }
+  .bento-scroll-track::-webkit-scrollbar-thumb {
+    @apply bg-primary-500/80 rounded-full;
+  }
+  .bento-scroll-track::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-500;
+  }
+
   .divider-gradient-brand {
     @apply h-px bg-gradient-to-r from-transparent via-[#932063]/30 via-primary-600/30 to-transparent;
   }
