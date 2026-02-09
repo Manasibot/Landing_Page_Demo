@@ -124,7 +124,7 @@ function BentoGridRow({
             key={`${copyIndex}-${item.id}`}
             variants={itemVariants}
             className={cn(
-              "group relative flex h-full min-h-[15rem] w-full min-w-[15rem] cursor-pointer items-end overflow-hidden rounded-xl border border-dark-700 bg-dark-800 p-4 shadow-sm transition-shadow duration-300 ease-in-out hover:shadow-lg hover:border-primary-500/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-dark-950",
+              "group relative flex h-full min-h-[15rem] w-full min-w-[15rem] cursor-pointer items-end overflow-hidden rounded-xl border border-dark-600 bg-dark-800 p-4 shadow-sm transition-shadow duration-300 ease-in-out hover:shadow-lg hover:border-primary-500/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-dark-900",
               item.span,
             )}
             whileHover={{ scale: 1.02 }}
@@ -211,7 +211,7 @@ const InteractiveImageBentoGallery: React.FC<
   return (
     <section
       ref={targetRef}
-      className="relative w-full overflow-hidden bg-dark-800 py-16 sm:py-24"
+      className="relative w-full overflow-hidden bg-dark-950 py-16 sm:py-24"
     >
       <motion.div
         style={{ opacity, y }}

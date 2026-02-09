@@ -54,7 +54,7 @@ export function ProfileCard(props: ProfileCardProps) {
       label: 'YouTube',
       hoverClass: 'hover:bg-[#FF0000] hover:shadow-lg hover:shadow-[#FF0000]/25',
     },
-  ].filter((s) => s.url && s.url !== '#')
+  ].filter((s): s is (typeof s) & { url: string } => Boolean(s.url && s.url !== '#'))
 
   const imageSrc = typeof imageUrl === 'string' ? imageUrl : imageUrl
   const imageWidth = typeof imageUrl === 'string' ? 470 : imageUrl.width ?? 470
