@@ -208,7 +208,7 @@ const InteractiveImageBentoGallery: React.FC<
   return (
     <section
       ref={targetRef}
-      className="relative w-full overflow-hidden bg-dark-950 py-16 sm:py-24"
+      className="relative w-full overflow-hidden bg-dark-800 py-16 sm:py-24"
     >
       <motion.div
         style={{ opacity, y }}

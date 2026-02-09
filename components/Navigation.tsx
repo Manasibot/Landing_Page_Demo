@@ -34,7 +34,7 @@ export default function Navigation() {
         className={cn(
           'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
           isScrolled
-            ? 'bg-dark-950/90 backdrop-blur-xl border-b border-dark-800/50'
+            ? 'bg-dark-900/95 backdrop-blur-xl border-b border-dark-700'
             : 'bg-transparent'
         )}
       >
@@ -46,7 +46,7 @@ export default function Navigation() {
                 <span className="text-dark-950 font-serif font-bold text-lg">L</span>
               </div>
               <div className="hidden sm:block">
-                <span className="text-dark-100 font-serif text-lg tracking-wide group-hover:text-primary-400 transition-colors">
+                <span className="text-dark-200 font-serif text-lg tracking-wide group-hover:text-primary-500 transition-colors">
                   Leading Under Pressure
                 </span>
               </div>
@@ -58,7 +58,7 @@ export default function Navigation() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-dark-300 hover:text-primary-400 text-sm font-medium tracking-wide transition-colors duration-300"
+                  className="text-dark-200 hover:text-primary-500 text-sm font-medium tracking-wide transition-colors duration-300"
                 >
                   {link.label}
                 </a>
@@ -71,7 +71,7 @@ export default function Navigation() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 text-dark-300 hover:text-primary-400 transition-colors"
+              className="lg:hidden p-2 text-dark-200 hover:text-primary-500 transition-colors"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -91,7 +91,7 @@ export default function Navigation() {
             className="fixed inset-0 z-40 lg:hidden"
           >
             <div
-              className="absolute inset-0 bg-dark-950/95 backdrop-blur-xl"
+              className="absolute inset-0 bg-dark-900/95 backdrop-blur-xl"
               onClick={() => setIsMobileMenuOpen(false)}
             />
             <nav className="relative pt-24 px-6">
@@ -104,7 +104,7 @@ export default function Navigation() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="text-dark-100 hover:text-primary-400 text-2xl font-serif tracking-wide transition-colors"
+                    className="text-dark-200 hover:text-primary-500 text-2xl font-serif tracking-wide transition-colors"
                   >
                     {link.label}
                   </motion.a>

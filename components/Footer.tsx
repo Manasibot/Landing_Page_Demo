@@ -13,7 +13,7 @@ const navLinks = [
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden py-8 border-t border-dark-800/50">
+    <footer className="relative overflow-hidden py-8 bg-dark-950 border-t border-dark-700">
       {/* Globe background - anchored to bottom, show full upper 180° (top hemisphere) */}
       <div className="absolute inset-0 flex justify-center items-end overflow-hidden">
         <div className="relative w-full max-w-[600px] aspect-[2/1] overflow-hidden">
@@ -47,7 +47,7 @@ export default function Footer() {
               <span className="text-dark-50 font-serif text-2xl font-semibold tracking-tight block leading-tight">
                 Leading Under Pressure
               </span>
-              <span className="text-dark-400 text-xs font-medium tracking-[0.2em] uppercase mt-1 block">
+              <span className="text-dark-300 text-xs font-medium tracking-[0.2em] uppercase mt-1 block">
                 Executive Leadership Experience
               </span>
             </div>
@@ -59,7 +59,7 @@ export default function Footer() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-dark-300 hover:text-primary-400 text-sm font-medium tracking-wide transition-colors duration-200"
+                className="text-dark-200 hover:text-primary-400 text-sm font-medium tracking-wide transition-colors duration-200"
               >
                 {link.label}
               </a>
@@ -67,7 +67,7 @@ export default function Footer() {
           </nav>
 
           {/* Event info */}
-          <div className="flex flex-wrap justify-center items-center gap-3 md:gap-5 mb-4 px-3 py-2 rounded-lg bg-dark-900/30 border border-dark-700/30 backdrop-blur-sm">
+          <div className="flex flex-wrap justify-center items-center gap-3 md:gap-5 mb-4 px-3 py-2 rounded-lg bg-dark-800/50 border border-dark-600 backdrop-blur-sm">
             <span className="text-dark-200 font-medium">Dubai</span>
             <span className="text-primary-500/60 text-sm">·</span>
             <span className="text-dark-200 font-medium">April 20–24, 2026</span>
@@ -80,10 +80,10 @@ export default function Footer() {
 
           {/* Copyright & Credits */}
           <div className="space-y-1">
-            <p className="text-dark-400 text-sm tracking-wide">
-              © {new Date().getFullYear()} Leading Under Pressure. All rights reserved.
+<p className="text-dark-300 text-sm tracking-wide">
+            © {new Date().getFullYear()} Leading Under Pressure. All rights reserved.
             </p>
-            <p className="text-dark-500 text-xs tracking-widest uppercase">
+            <p className="text-dark-400 text-xs tracking-widest uppercase">
               Led by Dr. Abdelbasit Ayoub & Dr. Owen Fernandes
             </p>
           </div>

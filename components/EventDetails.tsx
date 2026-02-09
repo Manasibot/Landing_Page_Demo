@@ -49,7 +49,7 @@ export default function EventDetails() {
           sizes="100vw"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-dark-950/60 via-dark-950/50 to-dark-950/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-dark-900/60 via-dark-900/50 to-dark-900/70" />
       </div>
 
       <div className="container-custom relative z-10">

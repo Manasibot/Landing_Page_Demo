@@ -35,7 +35,7 @@ export default function WhoIsFor() {
       className="section-padding relative overflow-hidden"
     >
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-dark-950 to-dark-900/50" />
+      <div className="absolute inset-0 bg-gradient-to-b from-dark-900 to-dark-800/50" />
 
       <div className="container-custom relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">

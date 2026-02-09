@@ -21,7 +21,7 @@ export default function Hero() {
         <ImagesSlider
           images={HERO_SLIDER_IMAGES}
           overlay={true}
-          overlayClassName="bg-gradient-to-b from-dark-950/40 via-dark-950/70 to-dark-950"
+          overlayClassName="bg-gradient-to-b from-dark-900/40 via-dark-900/70 to-dark-900"
           className="h-full w-full"
           autoplay={true}
           direction="right"
@@ -35,7 +35,7 @@ export default function Hero() {
         <motion.div
           animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
           transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute -top-1/4 -left-1/4 w-1/2 h-1/2 bg-gradient-radial from-primary-600/20 to-transparent rounded-full blur-3xl"
+          className="absolute -top-1/4 -left-1/4 w-1/2 h-1/2 bg-gradient-radial from-primary-500/10 to-transparent rounded-full blur-3xl"
         />
         <motion.div
           animate={{ scale: [1.2, 1, 1.2], opacity: [0.2, 0.4, 0.2] }}
@@ -66,7 +66,7 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.4 }}
           className="heading-xl mb-8"
         >
-          <span className="block text-dark-100">Leading Under</span>
+          <span className="block text-dark-50">Leading Under</span>
           <span className="block text-gradient glow-text mt-2">
             Pressure
           </span>
@@ -77,10 +77,10 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
-          className="text-xl md:text-2xl lg:text-3xl text-dark-300 font-serif italic max-w-3xl mx-auto mb-6"
+          className="text-xl md:text-2xl lg:text-3xl text-dark-200 font-serif italic max-w-3xl mx-auto mb-6"
         >
           <TypewriterEffectCycling
-            className="!font-normal italic font-serif text-xl md:text-2xl lg:text-3xl text-dark-300 max-w-3xl mx-auto text-center"
+            className="!font-normal italic font-serif text-xl md:text-2xl lg:text-3xl text-dark-200 max-w-3xl mx-auto text-center"
           />
         </motion.div>
 
@@ -89,7 +89,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.9 }}
-          className="text-dark-400 text-lg max-w-2xl mx-auto mb-12 leading-relaxed"
+          className="text-dark-200 text-lg max-w-2xl mx-auto mb-12 leading-relaxed"
         >
           An immersive leadership experience for leaders who operate where
           decisions carry real consequence—and who want to lead with clarity,
@@ -104,20 +104,20 @@ export default function Hero() {
           className="mb-12"
         >
           <div className="inline-flex items-center gap-2 mb-6">
-            <span className="px-4 py-2 bg-primary-600/10 border border-primary-600/30 rounded-full text-primary-400 text-sm font-medium tracking-wide">
+            <span className="px-4 py-2 bg-primary-500/10 border border-primary-500/30 rounded-full text-primary-400 text-sm font-medium tracking-wide">
               Executive Leadership Experience
             </span>
           </div>
           <div className="flex flex-wrap justify-center gap-6 md:gap-10">
-            <div className="flex items-center gap-2 text-dark-300">
+            <div className="flex items-center gap-2 text-dark-200">
               <MapPin className="w-5 h-5 text-primary-500" />
               <span className="font-medium">Dubai</span>
             </div>
-            <div className="flex items-center gap-2 text-dark-300">
+            <div className="flex items-center gap-2 text-dark-200">
               <Calendar className="w-5 h-5 text-primary-500" />
               <span className="font-medium">April 20–24, 2026</span>
             </div>
-            <div className="flex items-center gap-2 text-dark-300">
+            <div className="flex items-center gap-2 text-dark-200">
               <Lock className="w-5 h-5 text-primary-500" />
               <span className="font-medium">By Invitation Only</span>
             </div>
@@ -155,7 +155,7 @@ export default function Hero() {
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-          className="flex flex-col items-center gap-2 text-dark-500"
+          className="flex flex-col items-center gap-2 text-dark-300"
         >
           <span className="text-xs tracking-widest uppercase">Scroll</span>
           <ArrowDown className="w-4 h-4" />
