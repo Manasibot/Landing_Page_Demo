@@ -22,6 +22,7 @@ const config: Config = {
           800: '#78530f',
           900: '#654313',
         },
+        // Lighter dark palette – easy on the eyes, high readability
         dark: {
           50: '#f8fafc',
           100: '#f1f5f9',
@@ -29,11 +30,11 @@ const config: Config = {
           300: '#cbd5e1',
           400: '#94a3b8',
           500: '#64748b',
-          600: '#475569',
-          700: '#334155',
-          800: '#1e293b',
-          900: '#0f172a',
-          950: '#020617',
+          600: '#52627a',
+          700: '#3d4a5c',
+          800: '#2d3a4e',
+          900: '#222d3d',
+          950: '#1a2435',
         },
       },
       fontFamily: {
@@ -92,7 +93,12 @@ const config: Config = {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'hero-pattern': 'linear-gradient(to right bottom, rgba(15, 23, 42, 0.95), rgba(2, 6, 23, 0.98))',
+        'hero-pattern': 'linear-gradient(to right bottom, rgba(34, 45, 61, 0.95), rgba(26, 36, 53, 0.98))',
+      },
+      boxShadow: {
+        'primary-glow': '0 0 30px rgba(212, 160, 18, 0.4)',
+        'primary-glow-sm': '0 0 40px rgba(212, 160, 18, 0.1)',
+        'brand-glow': '0 0 20px rgba(147, 32, 99, 0.3)',
       },
     },
   },

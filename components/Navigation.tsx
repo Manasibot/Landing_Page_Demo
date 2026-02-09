@@ -90,7 +90,7 @@ export default function Navigation() {
             transition={{ duration: 0.3 }}
             className="fixed inset-0 z-40 lg:hidden"
           >
-            <div 
+            <div
               className="absolute inset-0 bg-dark-950/95 backdrop-blur-xl"
               onClick={() => setIsMobileMenuOpen(false)}
             />
