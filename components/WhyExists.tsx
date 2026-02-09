@@ -1,8 +1,44 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { useState } from 'react'
+import { motion, type Variants } from 'framer-motion'
 import { MotionSection, MotionDiv, fadeInUp, staggerContainer, staggerItem } from './ui/motion'
-import PressurePointsList from './PressurePointsList'
+
+const pressureListContainer: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.5,
+      delayChildren: 0.35,
+    },
+  },
+}
+
+const pressureListItem: Variants = {
+  hidden: { opacity: 0, x: -28 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 1, ease: [0.25, 0.46, 0.45, 0.94] },
+  },
+}
+
+const pressureListNumber: Variants = {
+  hidden: { opacity: 0, scale: 0.6 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.85, ease: [0.25, 0.46, 0.45, 0.94] },
+  },
+}
+
+const pressurePoints = [
+  'When stakes are high',
+  'When information is incomplete',
+  'When emotions influence judgment',
+  'When others look to you for certainty',
+]
 
 const outcomes = [
   'See what pressure truly reveals in them',
@@ -11,6 +47,7 @@ const outcomes = [
 ]
 
 export default function WhyExists() {
+  const [pressureListKey, setPressureListKey] = useState(0)
   return (
     <MotionSection
       variants={staggerContainer}
@@ -32,7 +69,7 @@ export default function WhyExists() {
             <div className="divider-gradient max-w-xs mx-auto" />
           </MotionDiv>
 
-          {/* Opening statement */}
+          {/* Opening statement + pressure points in one purple box */}
           <MotionDiv variants={fadeInUp} className="mb-16">
             <div className="card-glass p-8 md:p-12 bg-[#932063]/25">
               <p className="text-xl md:text-2xl text-dark-200 font-serif leading-relaxed text-center">
@@ -42,14 +79,43 @@ export default function WhyExists() {
               <p className="text-lg text-dark-400 mt-6 text-center">
                 But leadership itself is revealed elsewhere:
               </p>
+              <div className="divider-gradient max-w-xs mx-auto mt-6" />
+              {/* Numbered list: gold circles + vertical line (animated – re-runs on every visit) */}
+              <motion.div
+                key={pressureListKey}
+                variants={pressureListContainer}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, margin: '-50px' }}
+                onViewportLeave={() => setPressureListKey((k) => k + 1)}
+                className="relative flex flex-col mt-8 max-w-xl mx-auto"
+              >
+                {pressurePoints.map((point, index) => (
+                  <motion.div
+                    key={index}
+                    variants={pressureListItem}
+                    className="flex gap-4"
+                  >
+                    <div className="flex flex-col items-center pt-0.5">
+                      <motion.div
+                        variants={pressureListNumber}
+                        className="font-serif flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary-500 text-sm font-bold text-dark-950 shadow-md shadow-primary-900/30"
+                        aria-hidden
+                      >
+                        {index + 1}
+                      </motion.div>
+                      {index < pressurePoints.length - 1 && (
+                        <div className="w-0.5 flex-1 min-h-[16px] bg-primary-500" />
+                      )}
+                    </div>
+                    <div className="flex-1 pb-6 flex items-center">
+                      <span className="font-serif text-lg md:text-xl text-dark-200 leading-relaxed">{point}</span>
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
             </div>
           </MotionDiv>
-
-
-          {/* Pressure points – timeline style (numbered circles + connecting line) */}
-          <div className="mb-16">
-            <PressurePointsList />
-          </div>
 
           {/* Key statement */}
           <MotionDiv variants={fadeInUp} className="text-center mb-16">

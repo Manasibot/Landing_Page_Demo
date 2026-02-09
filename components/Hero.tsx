@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { MapPin, Calendar, Lock, ArrowDown } from 'lucide-react'
 import { ImagesSlider } from '@/components/ui/images-slider'
-import { TypewriterEffect } from '@/components/ui/typewriter-effect'
+import { TypewriterEffectCycling } from '@/components/ui/typewriter-effect'
 
 const HERO_SLIDER_IMAGES = [
   'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop',
@@ -79,16 +79,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.7 }}
           className="text-xl md:text-2xl lg:text-3xl text-dark-300 font-serif italic max-w-3xl mx-auto mb-6"
         >
-          <TypewriterEffect
-            words={[
-              { text: 'Leadership' },
-              { text: 'is' },
-              { text: 'revealed' },
-              { text: 'when' },
-              { text: 'it' },
-              { text: 'matters' },
-              { text: 'most.', className: 'text-primary-400' },
-            ]}
+          <TypewriterEffectCycling
             className="!font-normal italic font-serif text-xl md:text-2xl lg:text-3xl text-dark-300 max-w-3xl mx-auto text-center"
           />
         </motion.div>
