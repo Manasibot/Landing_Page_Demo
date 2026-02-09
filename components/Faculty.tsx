@@ -68,7 +68,7 @@ export default function Faculty() {
       className="section-padding relative overflow-hidden"
     >
       {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-dark-950 via-dark-900 to-dark-950">
+      <div className="absolute inset-0 bg-gradient-to-b from-dark-900 via-dark-800 to-dark-900">
         <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 40, repeat: Infinity, ease: 'linear' }}

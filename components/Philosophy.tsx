@@ -204,7 +204,7 @@ export default function Philosophy() {
       className="section-padding relative overflow-hidden"
     >
       {/* Background elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-dark-950 via-dark-900/50 to-dark-950" />
+      <div className="absolute inset-0 bg-gradient-to-b from-dark-900 via-dark-800/50 to-dark-900" />
       
       {/* Close overlay when expanded */}
       {expandedPhase !== null && (
@@ -212,7 +212,7 @@ export default function Philosophy() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 bg-dark-950/50 backdrop-blur-sm z-20 lg:hidden"
+          className="fixed inset-0 bg-dark-900/50 backdrop-blur-sm z-20 lg:hidden"
           onClick={handleCloseAll}
         />
       )}
@@ -285,7 +285,7 @@ export default function Philosophy() {
                           priority={index === 0}
                         />
                         {/* Dark overlay to keep text legible, but lighter for more image visibility */}
-                        <div className="absolute inset-0 bg-gradient-to-b from-dark-950/40 via-dark-950/55 to-dark-950/75" />
+                        <div className="absolute inset-0 bg-gradient-to-b from-dark-900/40 via-dark-900/55 to-dark-900/75" />
                       </div>
                     )}
                     {/* ASSESS - Brain Scanning Background */}

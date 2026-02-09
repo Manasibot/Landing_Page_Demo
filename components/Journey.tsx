@@ -82,7 +82,7 @@ function AccordionItem({ item, isActive, onMouseEnter }: AccordionItemProps) {
       />
       
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/60 to-dark-950/30" />
+      <div className="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/60 to-dark-900/30" />
 
       {/* Day number badge - always visible */}
       <div 
@@ -157,7 +157,7 @@ export default function Journey() {
       className="section-padding relative overflow-hidden"
     >
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-dark-950 via-dark-900/30 to-dark-950" />
+      <div className="absolute inset-0 bg-gradient-to-b from-dark-900 via-dark-800/30 to-dark-900" />
 
       <div className="container-custom relative z-10">
         {/* Two Column Layout */}
@@ -242,7 +242,7 @@ export default function Journey() {
                   />
                   
                   {/* Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-dark-950/90 via-dark-950/70 to-dark-950/50" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-dark-900/90 via-dark-900/70 to-dark-900/50" />
                   
                   {/* Content */}
                   <div className="absolute inset-0 p-5 flex flex-col justify-center">

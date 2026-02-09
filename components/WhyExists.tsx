@@ -54,7 +54,7 @@ export default function WhyExists() {
       className="section-padding relative overflow-hidden"
     >
       {/* Background accent */}
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary-600/30 to-transparent" />
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary-500/30 to-transparent" />
 
       <div className="container-custom">
         <div className="max-w-4xl mx-auto">

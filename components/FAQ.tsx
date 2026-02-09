@@ -111,7 +111,7 @@ export default function FAQ() {
       className="section-padding relative overflow-hidden"
     >
       {/* Background */}
-      <div className="absolute inset-0 bg-dark-950" />
+      <div className="absolute inset-0 bg-dark-800" />
 
       <div className="container-custom relative z-10">
         {/* Section header */}
