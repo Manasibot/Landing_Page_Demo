@@ -15,6 +15,9 @@ const faculty = [
     image: DrAayubProfile,
     description:
       'A seasoned leadership scholar and practitioner with decades of experience working with leaders in complex, high-pressure environments across regions and cultures. His work sits at the intersection of leadership psychology, decision-making under pressure, and human behavior. Known for his calm authority and depth of insight, Dr. Ayoub creates learning environments that are both intellectually rigorous and psychologically safe. His facilitation style is reflective, precise, and deeply human—grounded in real-world leadership realities rather than abstract theory.',
+    linkedinUrl: 'https://www.linkedin.com/in/dr-abdelbasit-ayoub-842a3223/',
+    twitterUrl: undefined,
+    youtubeUrl: undefined,
   },
   {
     name: 'Dr. Owen Fernandes',
@@ -22,6 +25,9 @@ const faculty = [
     image: Faculty2,
     description:
       'Brings over three decades of global experience in leadership development, executive coaching, and organizational capability building across the Middle East, Europe, and Asia. His work focuses on inner leadership capacity. With a strong foundation in psychometrics, experiential learning, and reflective practice, Dr. Owen translates deep insight into practical leadership awareness. His facilitation style blends clarity, warmth, and challenge—supporting leaders to move from automatic reaction to conscious choice.',
+    linkedinUrl: 'https://www.linkedin.com/in/owenfernandes/',
+    youtubeUrl: 'https://www.youtube.com/@owenfernandes4738',
+    twitterUrl: undefined,
   },
 ]
 
@@ -37,6 +43,8 @@ export default function Faculty() {
   const person = faculty[currentIndex]
   const isHoveringRef = useRef(false)
   const lastAdvanceTimeRef = useRef(Date.now())
+  const sectionRef = useRef<HTMLElement>(null)
+  const hasEnteredViewRef = useRef(false)
 
   const goPrev = () => {
     setCurrentIndex((i) => (i === 0 ? faculty.length - 1 : i - 1))
@@ -45,13 +53,38 @@ export default function Faculty() {
     setCurrentIndex((i) => (i === faculty.length - 1 ? 0 : i + 1))
   }
 
+  // When section enters view: always show profile 1 and start the 5s countdown from then
+  useEffect(() => {
+    const el = sectionRef.current
+    if (!el) return
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return
+        if (!hasEnteredViewRef.current) {
+          hasEnteredViewRef.current = true
+          setCurrentIndex(0)
+          lastAdvanceTimeRef.current = Date.now()
+        }
+      },
+      { threshold: 0.2, rootMargin: '0px' }
+    )
+    obs.observe(el)
+    return () => obs.disconnect()
+  }, [])
+
+  // Auto-advance only while section is in view; first advance 5s after user enters section
   useEffect(() => {
     const id = setInterval(() => {
+      if (!hasEnteredViewRef.current) return
+      if (!sectionRef.current) return
+      const rect = sectionRef.current.getBoundingClientRect()
+      const inView = rect.top < window.innerHeight * 0.9 && rect.bottom > 0
+      if (!inView) return
       if (!isHoveringRef.current && Date.now() - lastAdvanceTimeRef.current >= 5000) {
         goNext()
         lastAdvanceTimeRef.current = Date.now()
       }
-    }, 5000)
+    }, 1000)
     return () => clearInterval(id)
   }, [])
 
@@ -63,6 +96,7 @@ export default function Faculty() {
 
   return (
     <MotionSection
+      ref={sectionRef}
       id="faculty"
       variants={staggerContainer}
       className="section-padding relative overflow-hidden"
@@ -117,6 +151,9 @@ export default function Faculty() {
                 imageUrl={person.image}
                 showSocial={true}
                 reverse={currentIndex === 1}
+                linkedinUrl={person.linkedinUrl}
+                twitterUrl={person.twitterUrl}
+                youtubeUrl={person.youtubeUrl}
                 className="max-w-none px-0 max-w-5xl mx-auto"
                 />
               </motion.div>

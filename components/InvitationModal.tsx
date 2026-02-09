@@ -429,31 +429,33 @@ export function InvitationModal() {
                     <div className="grid flex-1 grid-cols-2 gap-x-3 gap-y-2.5 sm:gap-y-3 content-start">
                     <div className="col-span-2 sm:col-span-1 space-y-1">
                       <Label htmlFor="modal-firstName" className="text-xs font-medium text-dark-300">
-                        First name
+                        First name <span className="text-red-400" aria-hidden="true">*</span>
                       </Label>
                       <Input
                         id="modal-firstName"
                         name="firstName"
                         autoComplete="given-name"
                         placeholder="First name"
+                        required
                         className="h-9 text-sm rounded-lg transition-colors hover:border-primary-600/40"
                       />
                     </div>
                     <div className="col-span-2 sm:col-span-1 space-y-1">
                       <Label htmlFor="modal-lastName" className="text-xs font-medium text-dark-300">
-                        Last name
+                        Last name <span className="text-red-400" aria-hidden="true">*</span>
                       </Label>
                       <Input
                         id="modal-lastName"
                         name="lastName"
                         autoComplete="family-name"
                         placeholder="Last name"
+                        required
                         className="h-9 text-sm rounded-lg transition-colors hover:border-primary-600/40"
                       />
                     </div>
                     <div className="col-span-2 space-y-1">
                       <Label htmlFor="modal-email" className="text-xs font-medium text-dark-300">
-                        Email
+                        Email <span className="text-red-400" aria-hidden="true">*</span>
                       </Label>
                       <Input
                         id="modal-email"
@@ -461,17 +463,19 @@ export function InvitationModal() {
                         type="email"
                         autoComplete="email"
                         placeholder="you@company.com"
+                        required
                         className="h-9 text-sm rounded-lg transition-colors hover:border-primary-600/40"
                       />
                     </div>
                     <div className="col-span-2 sm:col-span-1 space-y-1">
                       <Label htmlFor="modal-phoneNumber" className="text-xs font-medium text-dark-300">
-                        Phone number
+                        Phone number <span className="text-red-400" aria-hidden="true">*</span>
                       </Label>
                       <div className="flex gap-2">
                         <select
                           id="modal-countryCode"
                           name="countryCode"
+                          required
                           className={cn(
                             'font-sans flex h-9 w-[7rem] shrink-0 rounded-lg border border-dark-600 bg-dark-800/80 px-2 py-2 text-sm text-dark-100',
                             'hover:border-primary-600/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-dark-950 transition-colors'
@@ -490,17 +494,19 @@ export function InvitationModal() {
                           type="tel"
                           autoComplete="tel-national"
                           placeholder="123 456 7890"
+                          required
                           className="h-9 flex-1 min-w-0 text-sm rounded-lg transition-colors hover:border-primary-600/40"
                         />
                       </div>
                     </div>
                     <div className="col-span-2 sm:col-span-1 space-y-1">
                       <Label htmlFor="modal-role" className="text-xs font-medium text-dark-300">
-                        Role
+                        Role <span className="text-red-400" aria-hidden="true">*</span>
                       </Label>
                       <select
                         id="modal-role"
                         name="role"
+                        required
                         className={cn(
                           'font-sans flex h-9 w-full rounded-lg border border-dark-600 bg-dark-800/80 px-3 py-2 text-sm text-dark-100 placeholder:text-dark-500',
                           'hover:border-primary-600/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-dark-950 transition-colors'
@@ -516,24 +522,26 @@ export function InvitationModal() {
                     </div>
                     <div className="col-span-2 space-y-1">
                       <Label htmlFor="modal-company" className="text-xs font-medium text-dark-300">
-                        Company
+                        Company <span className="text-red-400" aria-hidden="true">*</span>
                       </Label>
                       <Input
                         id="modal-company"
                         name="company"
                         placeholder="Company name"
+                        required
                         className="h-9 text-sm rounded-lg transition-colors hover:border-primary-600/40"
                       />
                     </div>
                     <div className="col-span-2 space-y-1">
                       <Label htmlFor="modal-linkedinUrl" className="text-xs font-medium text-dark-300">
-                        LinkedIn URL
+                        LinkedIn URL <span className="text-red-400" aria-hidden="true">*</span>
                       </Label>
                       <Input
                         id="modal-linkedinUrl"
                         name="linkedinUrl"
                         type="url"
                         placeholder="https://linkedin.com/in/..."
+                        required
                         className="h-9 text-sm rounded-lg transition-colors hover:border-primary-600/40"
                       />
                     </div>

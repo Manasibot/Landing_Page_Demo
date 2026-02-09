@@ -60,7 +60,7 @@ export default function UniverseOfLeadership() {
       imageItems={universeGalleryItems}
       label="The Universe"
       title="Universe of Leadership"
-      description="Explore transformational leadership experiences. Drag to explore."
+      description="Explore transformational leadership experiences."
     />
   )
 }

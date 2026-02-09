@@ -5,9 +5,9 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
 import { MotionSection, MotionDiv, fadeInUp, fadeInLeft, fadeInRight, staggerContainer } from './ui/motion'
 import { Brain, Target, Rocket, Sparkles, Zap, Eye, Scan, Focus, RocketIcon, ArrowDown } from 'lucide-react'
-import AssessImg from './assets/images/p1.jpeg'
-import AlignImg from './assets/images/p2.jpeg'
-import AscendImg from './assets/images/p3.jpeg'
+import AssessImg from './assets/philosophy/assess.jpg'
+import AlignImg from './assets/philosophy/align.jpg'
+import AscendImg from './assets/philosophy/assend.jpg'
 
 const phases = [
   {
@@ -280,12 +280,12 @@ export default function Philosophy() {
                         <Image
                           src={phase.image}
                           alt={phase.title}
-                          className="w-full h-full object-cover opacity-60"
+                          className="w-full h-full object-cover object-[center_15%] opacity-95"
                           sizes="(min-width: 1024px) 480px, 100vw"
                           priority={index === 0}
                         />
-                        {/* Dark overlay to keep text legible, but lighter for more image visibility */}
-                        <div className="absolute inset-0 bg-gradient-to-b from-dark-900/40 via-dark-900/55 to-dark-900/75" />
+                        {/* Overlay #1a202c for text legibility */}
+                        <div className="absolute inset-0 bg-[#1a202c]/85" />
                       </div>
                     )}
                     {/* ASSESS - Brain Scanning Background */}

@@ -68,12 +68,17 @@ export function AlertLiveEvent() {
           <Radio className="text-primary-400" size={16} strokeWidth={2} />
         </div>
         <div className="flex grow items-center min-w-0">
-          <div className="space-y-0.5 min-w-0">
+          <div className="space-y-0.5 min-w-0 w-full text-center">
             <p className="text-xs font-medium text-dark-100">
               {isLive ? (
                 'Live now'
               ) : (
-                <>Live in {countdownText}</>
+                <>
+                  Live in{' '}
+                  <span className="tabular-nums inline-block min-w-[14ch]">
+                    {countdownText}
+                  </span>
+                </>
               )}
             </p>
             <p className="text-xs text-dark-400">April 20, 2026 · Dubai</p>

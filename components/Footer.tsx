@@ -21,8 +21,8 @@ export default function Footer() {
             className="absolute left-1/2 -translate-x-1/2 top-0 w-full max-w-none aspect-square min-w-full min-h-full"
             config={{
               mapBrightness: 0.7,
-              baseColor: [212 / 255, 160 / 255, 18 / 255],
-              glowColor: [250 / 255, 204 / 255, 21 / 255],
+              baseColor: [226 / 255, 232 / 255, 240 / 255],
+              glowColor: [226 / 255, 232 / 255, 240 / 255],
             }}
           />
         </div>

@@ -158,7 +158,7 @@ export default function FAQ() {
           <p className="text-dark-400 mb-6">
             Have more questions? Ready to explore participation?
           </p>
-          <a href="#invitation" className="btn-secondary">
+          <a href="#invitation" className="btn-primary">
             Request an Invitation
           </a>
         </MotionDiv>
