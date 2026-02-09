@@ -161,7 +161,7 @@ export function InvitationModal() {
 
   return (
     <>
-      {/* Toast – bottom-right, same position/size as reminder (GlobalNotification) */}
+      {/* Toast – top-right on mobile, bottom-right on larger screens */}
       <AnimatePresence>
         {toast && (
           <motion.div
@@ -169,7 +169,7 @@ export function InvitationModal() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 24 }}
             transition={{ duration: 0.25 }}
-            className="fixed bottom-4 right-4 z-[110] w-full max-w-[320px] min-w-0 rounded-lg border border-primary-600/50 bg-primary-500 px-3 py-2 text-sm font-medium text-dark-950 shadow-lg shadow-primary-900/40"
+            className="fixed top-4 right-4 sm:top-auto sm:bottom-4 z-[110] w-full max-w-[320px] min-w-0 rounded-lg border border-primary-600/50 bg-primary-500 px-3 py-2 text-sm font-medium text-dark-950 shadow-lg shadow-primary-900/40"
           >
             {toastBold && toast.includes(toastBold) ? (
               <>
@@ -209,7 +209,7 @@ export function InvitationModal() {
               className="fixed inset-0 z-[101] flex flex-col items-center justify-center p-4 sm:p-6"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="flex h-[98vh] w-[98vw] sm:h-[95vh] sm:w-[50vw] max-h-[98vh] sm:max-h-[95vh] max-w-full flex-col overflow-hidden rounded-xl bg-white">
+              <div className="flex h-[95vh] w-[98vw] sm:h-[95vh] sm:w-[50vw] max-h-[95vh] max-w-full flex-col overflow-hidden rounded-xl bg-white">
                 <div className="min-h-0 flex-1 overflow-hidden">
                   {showCalendly && (
                     <>
@@ -277,7 +277,7 @@ export function InvitationModal() {
               className="fixed inset-0 z-[101] flex items-center justify-center p-4"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="font-sans flex h-[98vh] w-[98vw] sm:h-[95vh] sm:w-[40vw] max-w-full flex-col overflow-hidden rounded-xl border border-dark-600 border-primary-600/20 bg-dark-900/95 backdrop-blur-xl shadow-2xl shadow-primary-950/10">
+              <div className="font-sans flex h-[95vh] w-[98vw] sm:h-[95vh] sm:w-[40vw] max-w-full flex-col overflow-hidden rounded-xl border border-dark-600 border-primary-600/20 bg-dark-900/95 backdrop-blur-xl shadow-2xl shadow-primary-950/10">
               {/* Header – theme accent */}
               <div className="flex shrink-0 items-center justify-between border-b border-dark-700 border-primary-600/10 bg-dark-900/95 px-4 py-3 sm:px-6">
                 <div>
