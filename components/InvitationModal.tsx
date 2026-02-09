@@ -24,6 +24,124 @@ const ROLES = [
   'Other',
 ]
 
+const COUNTRY_CODES = [
+  { code: '+91', label: 'India +91' },
+  { code: '+1', label: 'US/Canada +1' },
+  { code: '+44', label: 'UK +44' },
+  { code: '+971', label: 'UAE +971' },
+  { code: '+966', label: 'Saudi Arabia +966' },
+  { code: '+61', label: 'Australia +61' },
+  { code: '+81', label: 'Japan +81' },
+  { code: '+86', label: 'China +86' },
+  { code: '+49', label: 'Germany +49' },
+  { code: '+33', label: 'France +33' },
+  { code: '+31', label: 'Netherlands +31' },
+  { code: '+39', label: 'Italy +39' },
+  { code: '+34', label: 'Spain +34' },
+  { code: '+65', label: 'Singapore +65' },
+  { code: '+60', label: 'Malaysia +60' },
+  { code: '+974', label: 'Qatar +974' },
+  { code: '+973', label: 'Bahrain +973' },
+  { code: '+968', label: 'Oman +968' },
+  { code: '+965', label: 'Kuwait +965' },
+  { code: '+972', label: 'Israel +972' },
+  { code: '+20', label: 'Egypt +20' },
+  { code: '+27', label: 'South Africa +27' },
+  { code: '+234', label: 'Nigeria +234' },
+  { code: '+254', label: 'Kenya +254' },
+  { code: '+55', label: 'Brazil +55' },
+  { code: '+52', label: 'Mexico +52' },
+  { code: '+62', label: 'Indonesia +62' },
+  { code: '+63', label: 'Philippines +63' },
+  { code: '+64', label: 'New Zealand +64' },
+  { code: '+82', label: 'South Korea +82' },
+  { code: '+90', label: 'Turkey +90' },
+  { code: '+7', label: 'Russia +7' },
+  { code: '+41', label: 'Switzerland +41' },
+  { code: '+43', label: 'Austria +43' },
+  { code: '+46', label: 'Sweden +46' },
+  { code: '+47', label: 'Norway +47' },
+  { code: '+45', label: 'Denmark +45' },
+  { code: '+353', label: 'Ireland +353' },
+  { code: '+48', label: 'Poland +48' },
+  { code: '+32', label: 'Belgium +32' },
+  { code: '+351', label: 'Portugal +351' },
+  { code: '+30', label: 'Greece +30' },
+  { code: '+380', label: 'Ukraine +380' },
+  { code: '+420', label: 'Czech +420' },
+  { code: '+36', label: 'Hungary +36' },
+  { code: '+40', label: 'Romania +40' },
+  { code: '+66', label: 'Thailand +66' },
+  { code: '+84', label: 'Vietnam +84' },
+  { code: '+880', label: 'Bangladesh +880' },
+  { code: '+94', label: 'Sri Lanka +94' },
+  { code: '+977', label: 'Nepal +977' },
+  { code: '+962', label: 'Jordan +962' },
+  { code: '+961', label: 'Lebanon +961' },
+  { code: '+213', label: 'Algeria +213' },
+  { code: '+212', label: 'Morocco +212' },
+  { code: '+216', label: 'Tunisia +216' },
+  { code: '+233', label: 'Ghana +233' },
+  { code: '+255', label: 'Tanzania +255' },
+  { code: '+256', label: 'Uganda +256' },
+  { code: '+250', label: 'Rwanda +250' },
+  { code: '+237', label: 'Cameroon +237' },
+  { code: '+358', label: 'Finland +358' },
+  { code: '+385', label: 'Croatia +385' },
+  { code: '+386', label: 'Slovenia +386' },
+  { code: '+421', label: 'Slovakia +421' },
+  { code: '+370', label: 'Lithuania +370' },
+  { code: '+371', label: 'Latvia +371' },
+  { code: '+372', label: 'Estonia +372' },
+  { code: '+354', label: 'Iceland +354' },
+  { code: '+998', label: 'Uzbekistan +998' },
+  { code: '+992', label: 'Tajikistan +992' },
+  { code: '+993', label: 'Turkmenistan +993' },
+  { code: '+996', label: 'Kyrgyzstan +996' },
+  { code: '+375', label: 'Belarus +375' },
+  { code: '+373', label: 'Moldova +373' },
+  { code: '+995', label: 'Georgia +995' },
+  { code: '+374', label: 'Armenia +374' },
+  { code: '+994', label: 'Azerbaijan +994' },
+  { code: '+98', label: 'Iran +98' },
+  { code: '+964', label: 'Iraq +964' },
+  { code: '+967', label: 'Yemen +967' },
+  { code: '+970', label: 'Palestine +970' },
+  { code: '+963', label: 'Syria +963' },
+  { code: '+218', label: 'Libya +218' },
+  { code: '+249', label: 'Sudan +249' },
+  { code: '+251', label: 'Ethiopia +251' },
+  { code: '+252', label: 'Somalia +252' },
+  { code: '+253', label: 'Djibouti +253' },
+  { code: '+260', label: 'Zambia +260' },
+  { code: '+263', label: 'Zimbabwe +263' },
+  { code: '+267', label: 'Botswana +267' },
+  { code: '+264', label: 'Namibia +264' },
+  { code: '+258', label: 'Mozambique +258' },
+  { code: '+261', label: 'Madagascar +261' },
+  { code: '+230', label: 'Mauritius +230' },
+  { code: '+248', label: 'Seychelles +248' },
+  { code: '+269', label: 'Comoros +269' },
+  { code: '+211', label: 'South Sudan +211' },
+  { code: '+257', label: 'Burundi +257' },
+  { code: '+243', label: 'DR Congo +243' },
+  { code: '+855', label: 'Cambodia +855' },
+  { code: '+856', label: 'Laos +856' },
+  { code: '+95', label: 'Myanmar +95' },
+  { code: '+673', label: 'Brunei +673' },
+  { code: '+670', label: 'East Timor +670' },
+  { code: '+960', label: 'Maldives +960' },
+  { code: '+975', label: 'Bhutan +975' },
+  { code: '+222', label: 'Mauritania +222' },
+  { code: '+223', label: 'Mali +223' },
+  { code: '+221', label: 'Senegal +221' },
+  { code: '+220', label: 'Gambia +220' },
+  { code: '+224', label: 'Guinea +224' },
+  { code: '+225', label: 'Ivory Coast +225' },
+  { code: '+359', label: 'Bulgaria +359' },
+  { code: '+381', label: 'Serbia +381' },
+]
+
 export function InvitationModal() {
   const [open, setOpen] = useState(false)
   const [submitting, setSubmitting] = useState(false)
@@ -124,12 +242,15 @@ export function InvitationModal() {
     setSubmitting(true)
     const form = e.currentTarget
     const formData = new FormData(form)
+    const countryCode = (formData.get('countryCode') as string) || ''
+    const phoneLocal = (formData.get('phoneNumber') as string) || ''
+    const phoneNumber = [countryCode, phoneLocal].map((s) => s.trim()).filter(Boolean).join(' ')
     const payload = {
       firstName: formData.get('firstName') as string,
       lastName: formData.get('lastName') as string,
       email: formData.get('email') as string,
       role: formData.get('role') as string,
-      phoneNumber: formData.get('phoneNumber') as string,
+      phoneNumber,
       company: formData.get('company') as string,
       linkedinUrl: formData.get('linkedinUrl') as string,
       whyJoin: formData.get('whyJoin') as string,
@@ -347,14 +468,31 @@ export function InvitationModal() {
                       <Label htmlFor="modal-phoneNumber" className="text-xs font-medium text-dark-300">
                         Phone number
                       </Label>
-                      <Input
-                        id="modal-phoneNumber"
-                        name="phoneNumber"
-                        type="tel"
-                        autoComplete="tel"
-                        placeholder="+1 234 567 8900"
-                        className="h-9 text-sm rounded-lg transition-colors hover:border-primary-600/40"
-                      />
+                      <div className="flex gap-2">
+                        <select
+                          id="modal-countryCode"
+                          name="countryCode"
+                          className={cn(
+                            'font-sans flex h-9 w-[7rem] shrink-0 rounded-lg border border-dark-600 bg-dark-800/80 px-2 py-2 text-sm text-dark-100',
+                            'hover:border-primary-600/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-dark-950 transition-colors'
+                          )}
+                        >
+                          <option value="">Code</option>
+                          {COUNTRY_CODES.map(({ code, label }) => (
+                            <option key={code} value={code}>
+                              {label}
+                            </option>
+                          ))}
+                        </select>
+                        <Input
+                          id="modal-phoneNumber"
+                          name="phoneNumber"
+                          type="tel"
+                          autoComplete="tel-national"
+                          placeholder="123 456 7890"
+                          className="h-9 flex-1 min-w-0 text-sm rounded-lg transition-colors hover:border-primary-600/40"
+                        />
+                      </div>
                     </div>
                     <div className="col-span-2 sm:col-span-1 space-y-1">
                       <Label htmlFor="modal-role" className="text-xs font-medium text-dark-300">
