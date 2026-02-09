@@ -123,15 +123,15 @@ export function ProfileCard(props: ProfileCardProps) {
         </motion.div>
       </div>
 
-      {/* Mobile: optional reverse order (image below text for 2nd profile) */}
+      {/* Mobile: always image first then info (same layout for all profiles) */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
-        className={cn('md:hidden max-w-sm mx-auto text-center bg-transparent', reverse && 'flex flex-col-reverse')}
+        className="md:hidden max-w-sm mx-auto text-center bg-transparent"
       >
         {/* Square Mobile Image */}
-        <div className={cn('w-full aspect-square bg-dark-700 rounded-3xl overflow-hidden flex items-center justify-center', reverse ? 'mt-6' : 'mb-6')}>
+        <div className="w-full aspect-square bg-dark-700 rounded-3xl overflow-hidden flex items-center justify-center mb-6">
           <Image
             src={imageSrc}
             alt={name}
