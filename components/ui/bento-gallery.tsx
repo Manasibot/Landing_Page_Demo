@@ -9,6 +9,7 @@ import {
   useTransform,
   AnimatePresence,
   animate,
+  type Variants,
 } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { X } from "lucide-react"
@@ -105,8 +106,8 @@ function BentoGridRow({
   copyIndex: number
   selectedItem: ImageItem | null
   setSelectedItem: (item: ImageItem | null) => void
-  containerVariants: typeof containerVariants
-  itemVariants: typeof itemVariants
+  containerVariants: Variants
+  itemVariants: Variants
 }) {
   return (
     <motion.div
