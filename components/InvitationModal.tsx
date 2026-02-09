@@ -193,7 +193,7 @@ export function InvitationModal() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
             className="fixed inset-0 z-[100] bg-dark-950/90 backdrop-blur-sm"
-            onClick={close}
+            onClick={() => close()}
             aria-hidden
           />
           {showCalendly ? (
@@ -290,7 +290,7 @@ export function InvitationModal() {
                 </div>
                 <button
                   type="button"
-                  onClick={close}
+                  onClick={() => close()}
                   className="rounded-lg p-2 text-dark-400 hover:bg-dark-700 hover:text-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-dark-900 transition-colors"
                   aria-label="Close"
                 >
@@ -422,7 +422,7 @@ export function InvitationModal() {
                   <div className="mt-6 pt-6 border-t border-dark-700/50 flex shrink-0 justify-end gap-2">
                     <button
                       type="button"
-                      onClick={close}
+                      onClick={() => close()}
                       className="btn-secondary text-sm px-4 py-2 rounded-lg"
                     >
                       Cancel
