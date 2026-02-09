@@ -87,15 +87,18 @@ export const TypewriterEffectCycling = ({
   const lastWord = displayText.slice(lastWordStart)
 
   return (
-    <div className={cn('inline', className)}>
+    <div className={cn('block sm:inline', className)}>
       <span className="text-dark-300">{displayText.slice(0, lastWordStart)}</span>
-      <span className={cn('text-primary-400', wordClassName)}>{lastWord}</span>
-      <motion.span
-        animate={{ opacity: showCursor ? 1 : 0 }}
-        transition={{ duration: 0.1 }}
-        className={cn('inline-block w-0.5 h-[0.9em] align-middle bg-primary-400 ml-0.5', cursorClassName)}
-        aria-hidden
-      />
+      <br className="sm:hidden" />
+      <span className="inline-block w-full text-center sm:inline sm:w-auto">
+        <span className={cn('text-primary-400', wordClassName)}>{lastWord}</span>
+        <motion.span
+          animate={{ opacity: showCursor ? 1 : 0 }}
+          transition={{ duration: 0.1 }}
+          className={cn('inline-block w-0.5 h-[0.9em] align-middle bg-primary-400 ml-0.5', cursorClassName)}
+          aria-hidden
+        />
+      </span>
     </div>
   )
 }
