@@ -1,7 +1,9 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { Globe } from '@/components/ui/globe'
+import FooterBg from './assets/dubai/footer.jpg'
+import LogoImg from './assets/logo/logo.png'
 
 const navLinks = [
   { href: '#philosophy', label: 'Philosophy' },
@@ -13,22 +15,21 @@ const navLinks = [
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden py-8 bg-dark-950 border-t border-dark-700">
-      {/* Globe background - anchored to bottom, show full upper 180° (top hemisphere) */}
-      <div className="absolute inset-0 flex justify-center items-end overflow-hidden">
-        <div className="relative w-full max-w-[600px] aspect-[2/1] overflow-hidden">
-          <Globe
-            className="absolute left-1/2 -translate-x-1/2 top-0 w-full max-w-none aspect-square min-w-full min-h-full"
-            config={{
-              mapBrightness: 0.7,
-              baseColor: [226 / 255, 232 / 255, 240 / 255],
-              glowColor: [226 / 255, 232 / 255, 240 / 255],
-            }}
+    <footer className="relative overflow-hidden py-8 border-t border-dark-700">
+      {/* Dubai footer background image – same treatment as EventDetails */}
+      <div className="absolute inset-0 -z-10">
+        <div className="relative w-full h-full">
+          <Image
+            src={FooterBg}
+            alt="Dubai skyline at night"
+            fill
+            priority
+            className="object-cover object-[center_88%] blur-[1.5px]"
           />
+          {/* Dark gradient overlay for legibility, matching EventDetails style */}
+          <div className="absolute inset-0 bg-gradient-to-b from-dark-900/60 via-dark-900/50 to-dark-900/70" />
         </div>
       </div>
-      {/* Semi-transparent overlay so earth is visible but content readable */}
-      <div className="absolute inset-0 bg-dark-950/80 pointer-events-none" />
 
       <div className="container-custom relative z-10">
         <div className="flex flex-col items-center text-center">
@@ -40,8 +41,16 @@ export default function Footer() {
             viewport={{ once: true }}
             className="flex items-center gap-4 mb-4 group"
           >
-            <div className="w-14 h-14 rounded-sm bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center shadow-lg shadow-primary-900/20 group-hover:shadow-primary-500/20 transition-shadow duration-300">
-              <span className="text-dark-950 font-serif font-bold text-2xl">L</span>
+            {/* Logo encircled with golden border and blurred background */}
+            <div className="flex items-center justify-center w-14 h-14 rounded-full border border-primary-500 bg-dark-900/40 backdrop-blur-md">
+              <Image
+                src={LogoImg}
+                alt="Leading Under Pressure logo"
+                width={64}
+                height={64}
+                className="w-[3.25rem] h-[3.25rem] object-contain"
+                priority
+              />
             </div>
             <div className="text-left">
               <span className="text-dark-50 font-serif text-2xl font-semibold tracking-tight block leading-tight">
@@ -67,7 +76,7 @@ export default function Footer() {
           </nav>
 
           {/* Event info */}
-          <div className="flex flex-wrap justify-center items-center gap-3 md:gap-5 mb-4 px-3 py-2 rounded-lg bg-dark-800/50 border border-dark-600 backdrop-blur-sm">
+          <div className="flex flex-wrap justify-center items-center gap-3 md:gap-5 mb-4 px-4 py-2 rounded-full bg-dark-800/50 border border-dark-600 backdrop-blur-sm">
             <span className="text-dark-200 font-medium">Dubai</span>
             <span className="text-primary-500/60 text-sm">·</span>
             <span className="text-dark-200 font-medium">April 20–24, 2026</span>
@@ -80,10 +89,10 @@ export default function Footer() {
 
           {/* Copyright & Credits */}
           <div className="space-y-1">
-<p className="text-dark-300 text-sm tracking-wide">
-            © {new Date().getFullYear()} Leading Under Pressure. All rights reserved.
+            <p className="text-dark-300 text-sm tracking-wide">
+              © {new Date().getFullYear()} Leading Under Pressure. All rights reserved.
             </p>
-            <p className="text-dark-400 text-xs tracking-widest uppercase">
+            <p className="text-primary-500 text-xs tracking-widest uppercase">
               Led by Dr. Abdelbasit Ayoub & Dr. Owen Fernandes
             </p>
           </div>

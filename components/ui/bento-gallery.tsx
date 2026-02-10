@@ -92,7 +92,8 @@ const ImageModal = ({
   )
 }
 
-const MARQUEE_DURATION = 120
+// Duration for one full scroll loop (seconds). Smaller = faster.
+const MARQUEE_DURATION = 80
 
 function BentoGridRow({
   imageItems,

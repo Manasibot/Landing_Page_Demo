@@ -22,6 +22,9 @@ import u16 from '@/components/assets/Universe of Leadership/photo_41_2026-02-09_
 import u17 from '@/components/assets/Universe of Leadership/photo_51_2026-02-09_14-58-52.jpg'
 import u18 from '@/components/assets/Universe of Leadership/photo_52_2026-02-09_14-58-52.jpg'
 import u19 from '@/components/assets/Universe of Leadership/photo_53_2026-02-09_14-58-52.jpg'
+import u20 from '@/components/assets/Universe of Leadership/new1.jpeg'
+import u21 from '@/components/assets/Universe of Leadership/new2.jpeg'
+import u22 from '@/components/assets/Universe of Leadership/new3.jpeg'
 
 /** Bento grid span from image dimensions: tall → row-span-2, wide → col-span-2. */
 function spanFromDimensions(url: string | StaticImageData): string {
@@ -52,6 +55,9 @@ const universeGalleryItems: ImageItem[] = [
   { id: 17, title: 'Leading Under Pressure', desc: 'Revealed when it matters most.', url: u17, span: spanFromDimensions(u17) },
   { id: 18, title: 'Universe of Leadership', desc: 'Explore transformational experiences.', url: u18, span: spanFromDimensions(u18) },
   { id: 19, title: 'By Invitation Only', desc: 'Selective cohort. Dubai 2026.', url: u19, span: spanFromDimensions(u19) },
+  { id: 20, title: 'Immersive Moments I', desc: 'Inside the leadership experience.', url: u20, span: spanFromDimensions(u20) },
+  { id: 21, title: 'Immersive Moments II', desc: 'Leaders in reflective practice.', url: u21, span: spanFromDimensions(u21) },
+  { id: 22, title: 'Immersive Moments III', desc: 'Capturing the work in motion.', url: u22, span: spanFromDimensions(u22) },
 ]
 
 export default function UniverseOfLeadership() {
