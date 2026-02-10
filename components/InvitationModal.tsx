@@ -10,9 +10,12 @@ import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 import { cn } from '@/lib/utils'
 
-const CALENDLY_EMBED_URL =
-  process.env.NEXT_PUBLIC_CALENDLY_EMBED_URL ||
-  'https://calendly.com/clictohire?hide_gdpr_banner=1'
+const CALENDLY_EMBED_URL = process.env.NEXT_PUBLIC_CALENDLY_EMBED_URL!
+
+// Base URL for the API. When this site is exported and hosted under WordPress,
+// this should point at the live Next.js backend (e.g. Vercel).
+// Locally, you can leave it undefined to use the relative /api/invitation path.
+const API_BASE = process.env.NEXT_PUBLIC_API_BASE
 const CALENDLY_SCRIPT = 'https://assets.calendly.com/assets/external/widget.js'
 
 const ROLES = [
@@ -256,7 +259,8 @@ export function InvitationModal() {
       whyJoin: formData.get('whyJoin') as string,
     }
     try {
-      const res = await fetch('/api/invitation', {
+      const apiUrl = API_BASE ? `${API_BASE}/api/invitation` : '/api/invitation'
+      const res = await fetch(apiUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),

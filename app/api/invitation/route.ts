@@ -13,6 +13,21 @@ export type InvitationPayload = {
   calendlyEventUri?: string
 }
 
+const ALLOWED_ORIGIN =
+  process.env.NEXT_PUBLIC_CORS_ORIGIN || 'https://ascendhigher.ae'
+
+function withCors(res: NextResponse) {
+  res.headers.set('Access-Control-Allow-Origin', ALLOWED_ORIGIN)
+  res.headers.set('Access-Control-Allow-Methods', 'POST,OPTIONS')
+  res.headers.set('Access-Control-Allow-Headers', 'Content-Type')
+  return res
+}
+
+// Handle CORS preflight
+export function OPTIONS() {
+  return withCors(new NextResponse(null, { status: 204 }))
+}
+
 export async function POST(request: NextRequest) {
   try {
     const body = (await request.json()) as InvitationPayload
@@ -49,9 +64,11 @@ export async function POST(request: NextRequest) {
         })
       } catch (sheetError) {
         console.error('[Invitation] Google Sheets append failed:', sheetError)
-        return NextResponse.json(
-          { error: 'Failed to save to sheet' },
-          { status: 500 }
+        return withCors(
+          NextResponse.json(
+            { error: 'Failed to save to sheet' },
+            { status: 500 }
+          )
         )
       }
     }
@@ -91,12 +108,14 @@ export async function POST(request: NextRequest) {
       })
     }
 
-    return NextResponse.json({ success: true })
+    return withCors(NextResponse.json({ success: true }))
   } catch (e) {
     console.error('[Invitation API]', e)
-    return NextResponse.json(
-      { error: 'Failed to submit invitation request' },
-      { status: 500 }
+    return withCors(
+      NextResponse.json(
+        { error: 'Failed to submit invitation request' },
+        { status: 500 }
+      )
     )
   }
 }
