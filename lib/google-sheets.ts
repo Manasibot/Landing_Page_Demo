@@ -15,6 +15,16 @@ export type InvitationRow = {
 }
 
 function loadCredentials(): object {
+  // Prefer JSON env var (works on Netlify/serverless where no file exists)
+  const credentialsJson = process.env.GOOGLE_SERVICE_ACCOUNT_JSON
+  if (credentialsJson) {
+    try {
+      return JSON.parse(credentialsJson.trim()) as object
+    } catch {
+      throw new Error('GOOGLE_SERVICE_ACCOUNT_JSON is not valid JSON.')
+    }
+  }
+
   const credentialsPath = process.env.GOOGLE_APPLICATION_CREDENTIALS
   if (credentialsPath) {
     try {
@@ -26,16 +36,7 @@ function loadCredentials(): object {
     }
   }
 
-  const credentialsJson = process.env.GOOGLE_SERVICE_ACCOUNT_JSON
-  if (!credentialsJson) {
-    throw new Error('Missing GOOGLE_APPLICATION_CREDENTIALS or GOOGLE_SERVICE_ACCOUNT_JSON')
-  }
-
-  try {
-    return JSON.parse(credentialsJson.trim()) as object
-  } catch {
-    throw new Error('GOOGLE_SERVICE_ACCOUNT_JSON is not valid JSON. Tip: use GOOGLE_APPLICATION_CREDENTIALS=path/to/key.json instead.')
-  }
+  throw new Error('Missing GOOGLE_SERVICE_ACCOUNT_JSON or GOOGLE_APPLICATION_CREDENTIALS')
 }
 
 /** Prefix with apostrophe so Sheets treats as text (avoids formula parse for +, =, -, @). */
