@@ -212,8 +212,8 @@ export default function Philosophy() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 bg-dark-900/50 backdrop-blur-sm z-20 lg:hidden"
-          onClick={handleCloseAll}
+          className="fixed inset-0 bg-dark-900/50 z-20 lg:hidden pointer-events-none"
+          aria-hidden
         />
       )}
 
@@ -280,42 +280,22 @@ export default function Philosophy() {
                         <Image
                           src={phase.image}
                           alt={phase.title}
-                          className="w-full h-full object-cover object-[center_15%] opacity-95"
+                          className="w-full h-full object-cover object-[center_15%] opacity-20"
                           sizes="(min-width: 1024px) 480px, 100vw"
                           priority={index === 0}
                         />
-                        {/* Overlay #1a202c for text legibility */}
-                        <div className="absolute inset-0 bg-[#1a202c]/85" />
+                        {/* Solid dark overlay – no blue-grey, no whitish blend */}
+                        <div className="absolute inset-0 bg-black/88" />
                       </div>
                     )}
-                    {/* ASSESS - Brain Scanning Background */}
-                    {index === 0 && (
-                      <div className="absolute inset-0 opacity-30">
-                        {/* Brain wave grid */}
-                        <div className="absolute inset-0">
-                          {Array.from({ length: 8 }).map((_, i) => (
-                            <div
-                              key={i}
-                              className="absolute w-full h-px bg-gradient-to-r from-transparent via-blue-500/20 to-transparent"
-                              style={{
-                                top: `${(i + 1) * 12.5}%`,
-                                animation: `brain-wave ${2 + i * 0.3}s ease-in-out infinite`,
-                                animationDelay: `${i * 0.2}s`,
-                              }}
-                            />
-                          ))}
-                          
-                          {/* Scanning effect */}
-                          {isExpanded && (
-                            <div className="absolute inset-0 overflow-hidden">
-                              <div 
-                                className="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-transparent via-blue-500/10 to-transparent"
-                                style={{
-                                  animation: `scanning 4s linear infinite`,
-                                }}
-                              />
-                            </div>
-                          )}
+                    {/* ASSESS - Brain Scanning Background (decorative layer removed to avoid any light/whitish wash) */}
+                    {index === 0 && isExpanded && (
+                      <div className="absolute inset-0 opacity-15 pointer-events-none">
+                        <div className="absolute inset-0 overflow-hidden">
+                          <div
+                            className="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-transparent via-blue-500/10 to-transparent"
+                            style={{ animation: `scanning 4s linear infinite` }}
+                          />
                         </div>
                       </div>
                     )}
