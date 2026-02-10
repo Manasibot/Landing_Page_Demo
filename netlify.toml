@@ -1,0 +1,5 @@
+# Netlify: disable smart secrets detection so intentional env vars
+# (NEXT_PUBLIC_CALENDLY_EMBED_URL, Google Sheets) in build output don't fail the build.
+# Real secrets are stored only in Netlify Environment variables, not in repo.
+[build.environment]
+  SECRETS_SCAN_SMART_DETECTION_ENABLED = "false"
