@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import Image from 'next/image'
 import { cn } from '@/lib/utils'
-import LogoImg from './assets/logo/logo.png'
+import LogoImg from './assets/logo/ah logo.png'
 
 const navLinks = [
   { href: '#philosophy', label: 'Philosophy' },
@@ -43,23 +43,15 @@ export default function Navigation() {
         <nav className="container-custom">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <a href="#" className="flex items-center gap-3 group">
-              {/* Match footer logo style: golden border + subtle blur */}
-              <div className="flex items-center justify-center w-12 h-12 rounded-full border border-primary-500 bg-dark-900/40 backdrop-blur-md">
-                <Image
-                  src={LogoImg}
-                  alt="Leading Under Pressure logo"
-                  width={40}
-                  height={40}
-                  className="w-10 h-10 object-contain"
-                  priority
-                />
-              </div>
-              <div className="hidden sm:block">
-                <span className="text-dark-200 font-serif text-lg tracking-wide group-hover:text-primary-500 transition-colors">
-                  Leading Under Pressure
-                </span>
-              </div>
+            <a href="https://ascendhigher.ae/" target="_blank" rel="noopener noreferrer" className="flex items-center group mt-2">
+              <Image
+                src={LogoImg}
+                alt="Ascend Higher"
+                width={480}
+                height={180}
+                className="h-32 w-auto object-contain sm:h-36"
+                priority
+              />
             </a>
 
             {/* Desktop Navigation */}

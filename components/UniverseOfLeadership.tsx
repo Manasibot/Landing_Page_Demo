@@ -64,9 +64,9 @@ export default function UniverseOfLeadership() {
   return (
     <InteractiveImageBentoGallery
       imageItems={universeGalleryItems}
-      label="The Universe"
-      title="Universe of Leadership"
-      description="Explore transformational leadership experiences."
+      label=""
+      title="Leadership Development, Grounded in Experience"
+      description="Five decades of collective work with leaders across regions, industries, and cultures."
     />
   )
 }

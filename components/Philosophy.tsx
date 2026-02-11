@@ -17,6 +17,7 @@ const phases = [
     description: 'Pressure reveals patterns—often quietly, but decisively. Leaders gain visibility into how stress affects their thinking, emotional regulation, decision-making, and presence.',
     detail: 'This phase builds awareness through live leadership simulations and real-time observation, making behavior visible—not theoretical.',
     color: 'from-blue-500 to-cyan-500',
+    labelColor: 'from-blue-400 to-cyan-300',
     bgColor: 'bg-blue-500/10',
     borderColor: 'border-blue-500/30',
     revealIcon: Eye,
@@ -29,6 +30,7 @@ const phases = [
     description: 'Awareness alone is not enough. Leaders learn to align their responses with the reality of the situation, the expectations of the role, and the emotional state of those they lead.',
     detail: 'Alignment is where leadership becomes intentional rather than habitual.',
     color: 'from-primary-500 to-amber-500',
+    labelColor: 'from-primary-400 to-amber-400',
     bgColor: 'bg-primary-500/10',
     borderColor: 'border-primary-500/30',
     revealIcon: Zap,
@@ -41,6 +43,7 @@ const phases = [
     description: 'As leaders learn to pause, regulate, and choose consciously, leadership ascends. Not through more effort—but through greater inner capacity.',
     detail: 'Leaders lead with calm visibility, credibility under pressure, clarity in uncertainty, and conscious choice when it matters most.',
     color: 'from-purple-500 to-pink-500',
+    labelColor: '',
     bgColor: 'bg-purple-500/10',
     borderColor: 'border-purple-500/30',
     revealIcon: Sparkles,
@@ -288,21 +291,26 @@ export default function Philosophy() {
                         <div className="absolute inset-0 bg-black/88" />
                       </div>
                     )}
-                    {/* ASSESS - Brain Scanning Background (decorative layer removed to avoid any light/whitish wash) */}
-                    {index === 0 && isExpanded && (
-                      <div className="absolute inset-0 opacity-15 pointer-events-none">
-                        <div className="absolute inset-0 overflow-hidden">
-                          <div
-                            className="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-transparent via-blue-500/10 to-transparent"
-                            style={{ animation: `scanning 4s linear infinite` }}
-                          />
-                        </div>
+                    {/* ASSESS - Blue glow (always) + scanning animation when expanded */}
+                    {index === 0 && (
+                      <div className="absolute inset-0 z-0 opacity-30 overflow-hidden pointer-events-none">
+                        {/* Base glow - always visible */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-cyan-500/10 to-transparent" />
+                        {/* Scanning line - when expanded */}
+                        {isExpanded && (
+                          <div className="absolute inset-0 overflow-hidden">
+                            <div
+                              className="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-transparent via-blue-500/20 to-transparent"
+                              style={{ animation: `scanning 4s linear infinite` }}
+                            />
+                          </div>
+                        )}
                       </div>
                     )}
 
                     {/* ALIGN - Target Focus Background */}
                     {index === 1 && (
-                      <div className="absolute inset-0 opacity-30 overflow-hidden">
+                      <div className="absolute inset-0 z-0 opacity-30 overflow-hidden pointer-events-none">
                         {/* Concentric circles */}
                         {[1, 1.5, 2, 2.5].map((scale, i) => (
                           <div
@@ -337,7 +345,7 @@ export default function Philosophy() {
 
                     {/* ASCEND - Rocket Launch Background */}
                     {index === 2 && (
-                      <div className="absolute inset-0 opacity-30 overflow-hidden">
+                      <div className="absolute inset-0 z-0 opacity-30 overflow-hidden pointer-events-none">
                         {/* Launch particles */}
                         {Array.from({ length: 15 }).map((_, i) => (
                           <div
@@ -380,8 +388,8 @@ export default function Philosophy() {
                       </div>
                     )}
 
-                    {/* Content Container */}
-                    <div className="relative z-10">
+                    {/* Content Container - above overlay so ASSESS / ALIGN / ASCEND text are on top */}
+                    <div className="relative z-20">
                       {/* Top section with icon and label */}
                       <div className="flex items-start justify-between mb-6">
                         {/* Icon */}
@@ -424,7 +432,14 @@ export default function Philosophy() {
                         className="mb-3"
                       >
                         <div className="inline-flex items-center gap-2">
-                          <span className={`text-2xl font-serif font-bold bg-gradient-to-r ${phase.color} bg-clip-text text-transparent`}>
+                          <span
+                            className={
+                              index === 2
+                                ? 'text-2xl font-serif font-bold'
+                                : `text-2xl font-serif font-bold bg-gradient-to-r ${phase.labelColor || phase.color} bg-clip-text text-transparent`
+                            }
+                            style={index === 2 ? { color: '#EC6DB1' } : undefined}
+                          >
                             {phase.label}
                           </span>
                           {isExpanded && (
